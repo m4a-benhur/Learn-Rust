@@ -1,10 +1,12 @@
 # Introduction to Rust
 
+
 ### What is Programming?
 Programming is like writing a recipe that a computer can follow exactly. Just like a cake recipe tells someone step-by-step how to bake, we write instructions that tell the computer what to do.
 
 ### What is Rust?
 **Definition:** A language empowering everyone to build reliable and efficient software" - especially perfect for handling money and financial applications safely.
+
 
 ### Installation Instructions
 **Using Rustup (the official installer):**
@@ -38,8 +40,10 @@ Programming is like writing a recipe that a computer can follow exactly. Just li
 
 ---
 
+
 ### Welcome & What We're Building
 Welcome! Today we start learning Rust - a programming language specifically chosen by Stellar because it's incredibly safe for handling money. By the end of today, you'll write your first Rust program!
+
 
 ### Why Rust for Blockchain?
 **The Big Problem:** "What happens if there's a bug in software that handles millions of dollars?"
@@ -61,7 +65,9 @@ Welcome! Today we start learning Rust - a programming language specifically chos
 
 ## Part 1: Your First Rust Program
 
+
 ### Hello, World! - The Traditional First Program
+
 
 **Let's create our first program together:**
 ```bash
@@ -86,6 +92,7 @@ fn main() {
 cargo run
 ```
 
+
 ### Make It Personal
 **Let's change it to something fun:**
 ```rust
@@ -101,9 +108,12 @@ fn main() {
 
 ---
 
+
 ## Part 2: Variables - Storing Information
 
+
 ### What is a Variable?
+
 A variable is like a labeled box where we store information. In blockchain, we store things like account balances, addresses, and transaction amounts.
 
 In Rust, variables have *types* that describe the kind of data they store. Rust is statically typed, meaning the compiler must know the type of every variable at compile time.
@@ -112,7 +122,9 @@ Types in Rust can be divided into scalar types (single values) and compound type
 
 
 
+
 ### Variables in Rust Are Immutable by Default
+
 
 **Basic variable creation:**
 ```rust
@@ -135,7 +147,9 @@ fn main() {
 
 **This is good for blockchain - prevents accidental changes!**
 
+
 ### When We Need to Change Variables
+
 
 **Use `mut` to make variables changeable:**
 ```rust
@@ -148,7 +162,9 @@ fn main() {
 }
 ```
 
+
 ### Variable Naming Rules
+
 **Simple, clear names:**
 ```rust
 fn main() {
@@ -165,7 +181,9 @@ fn main() {
 - Start with a letter
 - Make names clear and simple!
 
+
 ### Shadowing - A Special Rust Feature
+
 **You can reuse variable names:**
 ```rust
 fn main() {
@@ -181,19 +199,26 @@ fn main() {
 
 ---
 
+
 ## Part 3: Data Types - Teaching the Computer What Things Are
 
+
 ### Why Data Types Matter
+
 If I say 'add 25 and 30', you know I mean 55. But if I say 'add twenty-five and thirty', the computer needs to know these are numbers, not text!
 
+
 ### Rust's Type System
+
 - **Strongly typed:** Every value has a specific type
 - **Type inference:** Rust can often guess the type
 - **Explicit types:** We can specify types when needed
 
+
 ### Scalar Types (Single Values)
 
 #### Integer Types - Whole Numbers
+
 ```rust
 fn main() {
     let x: i32 = 10;
@@ -209,7 +234,9 @@ fn main() {
 - `u8` - only positive numbers (0 to 255)
 - Use `i32` for most whole numbers
 
+
 #### Floating-Point Types - Decimal Numbers
+
 ```rust
 fn main() {
     let x: f32 = 2.5;
@@ -224,7 +251,9 @@ fn main() {
 - `f64` is the default (more precise)
 - Use for prices, percentages, anything with decimals
 
+
 #### Boolean Type - True/False
+
 ```rust
 fn main() {
     let t: bool = true;
@@ -237,7 +266,9 @@ fn main() {
 
 **Simple:** Only two values - `true` or `false`
 
+
 #### Character Type - Single Characters
+
 ```rust
 fn main() {
     let c: char = 'Z';
@@ -250,9 +281,12 @@ fn main() {
 
 **Remember:** Single quotes for characters, double quotes for text
 
+
 ### Compound Types (Multiple Values)
 
+
 #### Tuples - Group Multiple Values
+
 ```rust
 fn main() {
     let tup: (i32, f64, u8) = (500, 6.4, 1);
@@ -268,7 +302,9 @@ fn main() {
 
 **Think of it as:** A box with multiple labeled compartments
 
+
 #### Arrays - Lists of Same Type
+
 ```rust
 fn main() {
     let a = [1, 2, 3, 4, 5];
@@ -282,7 +318,9 @@ fn main() {
 
 **Simple rule:** All items must be the same type, size is fixed
 
+
 ### Working with Strings
+
 ```rust
 fn main() {
     let s1 = String::from("hello");
@@ -295,7 +333,9 @@ fn main() {
 
 **Don't worry about the difference yet - we'll learn more later!**
 
+
 ### Simple Blockchain Example
+
 ```rust
 fn main() {
     let balance = 100;
@@ -310,17 +350,23 @@ fn main() {
 
 ---
 
+
 ## Part 4: Ownership & Borrowing Basics
 
+
 ### The Core Concept
+
 "Ownership is Rust's superpower for preventing bugs in financial software."
 
 ### Basic Ownership Rules
+
 1. Each value has exactly one owner
 2. When the owner goes out of scope, the value is freed
 3. You can transfer ownership or borrow temporarily
 
+
 ### Simple Example
+
 ```rust
 fn main() {
     let s1 = String::from("hello");
@@ -331,7 +377,9 @@ fn main() {
 }
 ```
 
+
 ### References - Borrowing Data
+
 ```rust
 fn main() {
     let s1 = String::from("hello");
@@ -347,7 +395,9 @@ fn main() {
 
 ---
 
+
 ## Part 5: Hands-On Exercise
+
 
 ### Simple Wallet Exercise
 "Let's put it all together:"
@@ -379,9 +429,11 @@ fn main() {
 
 ---
 
-## Session Wrap-Up (5 minutes)
+## Session Wrap-Up
+
 
 ### What We Accomplished Today
+
 
 **Core Programming Concepts:**
 - ✅ **Variables** - Storage with labels (`let` keyword)
