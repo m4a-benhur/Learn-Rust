@@ -1,4 +1,4 @@
-# Session 2: Functions, Control Flow & Decision Making
+# Functions, Control Flow & Decision Making
 
 ## Session Overview
 **Welcome Back! Today we'll learn to make our code smart and reusable.**
@@ -117,6 +117,8 @@ fn main() {
 
 ## Part 2: Making Decisions with if/else
 
+Decision making in Rust with if and else lets your program choose between different paths depending on whether a condition is true or false. You give Rust a test (like “is this number bigger than 10?”), and if the test is true, it runs one block of code; if not, it can run another block with else. This makes your program smarter because it can react differently based on the situation instead of always doing the same thing.
+
 ### Basic if Statement
 ```rust
 fn main() {
@@ -164,6 +166,8 @@ fn main() {
 
 ## Part 3: Pattern Matching with match
 
+Pattern matching in Rust is a powerful way to check a value against different possible shapes or cases, and then run the code that matches. Instead of writing lots of _if/else_ statements, you can use _match_ to clearly list out every possibility. For example, a number can be checked to see if it’s 1, 2, or something else, and Rust will guide you to handle all cases so your program is safer and easier to read.
+
 ### Basic match Statement
 ```rust
 fn describe_grade(grade: char) {
@@ -205,6 +209,8 @@ fn main() {
 ---
 
 ## Part 4: Loops - Repeating Tasks
+
+Loops in Rust are a way to make your program repeat an action without writing the same code over and over. You can use a _loop_ to repeat forever until you tell it to stop, a _while_ loop to keep running while a condition is true, or a _for_ loop to go through a range of numbers or items in a collection. This makes your programs more powerful because they can handle tasks like counting, checking lists, or running until a certain condition is met—all automatically.
 
 ### while Loop
 ```rust
@@ -255,6 +261,8 @@ fn main() {
 
 ## Part 5: Basic Error Handling with Result
 
+Basic error handling with Result in Rust means that instead of your program crashing when something goes wrong, a function can return a special value that says either _Ok_ (everything worked and here’s the result) or _Err_ (something failed and here’s the error). This way, you as the programmer can decide what to do next; like retry, show a message, or safely stop; making your program more reliable to work with.
+
 ### The Problem
 ```rust
 fn divide(a: f64, b: f64) -> f64 {
@@ -294,6 +302,9 @@ fn main() {
 Let's build a salary calculator that handles different tax brackets:
 
 ```rust
+// Function to calculate tax based on salary brackets.
+// We will use if/else if/else conditions to apply different tax rates 
+// depending on the salary range.
 fn calc_tax(salary: f64) -> f64 {
     if salary <= 20000.0 {
         0.0
@@ -306,20 +317,25 @@ fn calc_tax(salary: f64) -> f64 {
     }
 }
 
+// Function to calculate net salary after tax deduction.
+// We will return a Result type so we can handle invalid inputs (like negative salaries).
+// Ok(...) will return the net salary, Err(...) will return an error message.
 fn net_salary(gross: f64) -> Result<f64, &'static str> {
     if gross < 0.0 {
-        Err("Negative salary invalid")
+        Err("Invalid salary")
     } else {
         Ok(gross - calc_tax(gross))
     }
 }
 
+// Function to categorize the salary level into Entry, Mid, Senior, or Executive.
+// We will use the match keyword with ranges to decide the salary level.
 fn salary_level(salary: f64) -> &'static str {
-    match salary as i32 {
-        0..=20000 => "Entry",
-        20001..=50000 => "Mid",
-        50001..=100000 => "Senior",
-        _ => "Executive"
+    match salary as f64 {
+        0.0..=20000.0 => "Entry",
+        20000.01..=50000.0 => "Mid",
+        50000.01..=100000.0 => "Senior",
+        _ => "Executive",
     }
 }
 
@@ -337,6 +353,7 @@ fn main() {
         }
     }
 }
+
 ```
 
 ### Your Turn!
