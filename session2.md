@@ -302,56 +302,35 @@ fn main() {
 Let's build a salary calculator that handles different tax brackets:
 
 ```rust
-// Function to calculate tax based on salary brackets.
+// Function calc_tax() to calculate tax based on salary brackets.
 // We will use if/else if/else conditions to apply different tax rates 
 // depending on the salary range.
-fn calc_tax(salary: f64) -> f64 {
-    if salary <= 20000.0 {
-        0.0
-    } else if salary <= 50000.0 {
-        (salary - 20000.0) * 0.10
-    } else if salary <= 100000.0 {
-        3000.0 + (salary - 50000.0) * 0.20
-    } else {
-        13000.0 + (salary - 100000.0) * 0.30
-    }
-}
 
-// Function to calculate net salary after tax deduction.
+    // If salary is less than or equal to 20000, no tax.
+    // If salary is between 20000 and 50000 (not including 20000), tax is 10% of amount above 20000
+    // If salary is between 50000 and 100000 (not including 50000), tax is 3000 + 20% of amount above 50000
+    // If salary is above 100000, tax is 13000 + 30% of amount above 100000
+
+
+
+// Function net_salary() to calculate net salary after tax deduction.
 // We will return a Result type so we can handle invalid inputs (like negative salaries).
 // Ok(...) will return the net salary, Err(...) will return an error message.
-fn net_salary(gross: f64) -> Result<f64, &'static str> {
-    if gross < 0.0 {
-        Err("Invalid salary")
-    } else {
-        Ok(gross - calc_tax(gross))
-    }
-}
 
-// Function to categorize the salary level into Entry, Mid, Senior, or Executive.
+
+
+
+
+// Function salary_level() to categorize the salary level into Entry, Mid, Senior, or Executive.
 // We will use the match keyword with ranges to decide the salary level.
-fn salary_level(salary: f64) -> &'static str {
-    match salary as f64 {
-        0.0..=20000.0 => "Entry",
-        20000.01..=50000.0 => "Mid",
-        50000.01..=100000.0 => "Senior",
-        _ => "Executive",
-    }
-}
+
+
 
 fn main() {
-    println!("Salary Calculator");
-    let salaries = [15000.0, 35000.0, 75000.0, 120000.0];
 
-    for salary in salaries {
-        println!("\nGross: ${:.2}", salary);
-        println!("Level: {}", salary_level(salary));
-        
-        match net_salary(salary) {
-            Ok(net) => println!("Tax: ${:.2}\nNet: ${:.2}", salary - net, net),
-            Err(e) => println!("Error: {}", e),
-        }
-    }
+
+
+
 }
 
 ```
