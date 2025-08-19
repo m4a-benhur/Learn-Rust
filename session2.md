@@ -302,27 +302,28 @@ fn main() {
 Let's build a salary calculator that handles different tax brackets:
 
 ```rust
-// Function calc_tax() to calculate tax based on salary brackets.
-// We will use if/else if/else conditions to apply different tax rates 
-// depending on the salary range.
+//Write a function calc_tax(salary: f64) -> f64 
+// that returns 0.0 if salary ≤ 20,000.
 
-    // If salary is less than or equal to 20000, no tax.
-    // If salary is between 20000 and 50000 (not including 20000), tax is 10% of amount above 20000
-    // If salary is between 50000 and 100000 (not including 50000), tax is 3000 + 20% of amount above 50000
-    // If salary is above 100000, tax is 13000 + 30% of amount above 100000
+//Extend calc_tax to return 1500 + 10% of amount above 
+// 20,000 if salary ≤ 50,000.
 
+//Extend it further: if salary ≤ 100,000, 
+// return 3000 + 20% of amount above 50,000.
 
+//Add a final case: if salary > 100,000, 
+// return 13,000 + 30% of amount above 100,000.
 
 // Function net_salary() to calculate net salary after tax deduction.
-// We will return a Result type so we can handle invalid inputs (like negative salaries).
+// We will return a Result type so we can handle invalid inputs 
+// (like negative salaries).
 // Ok(...) will return the net salary, Err(...) will return an error message.
 
 
+//Write a function salary_level(salary: f64) -> &'static str that 
+// returns "Entry", 
+// "Mid", "Senior", or "Executive" depending on the salary range.
 
-
-
-// Function salary_level() to categorize the salary level into Entry, Mid, Senior, or Executive.
-// We will use the match keyword with ranges to decide the salary level.
 
 
 
@@ -335,11 +336,12 @@ fn main() {
 
 ```
 
-### Your Turn!
+### Assigment!
 Try modifying the calculator:
 1. Change the tax brackets
 2. Add a function to calculate monthly salary (divide by 12)
-3. Add bonus calculation
+3. Add bonus calculation (+3000 for Entry, +5000 for mid, +8% for Senior, 10000 + 8% for Executive)
+4. Add error messages for input of negative salaries
 
 ---
 
@@ -367,13 +369,65 @@ Try modifying the calculator:
 - Error handling prevents contract failures
 
 ### Preview of Next Session
-**Session 3: Collections & Data Organization**
+**Collections & Data Organization**
 - Storing multiple employees in lists (Vec)
 - Fast lookups with HashMap
 - Processing collections with iterators
 - Reading/writing data to files
 - Building a book inventory system
 
-**Homework Challenge:** Try adding a function to calculate yearly bonus based on salary level!
+### Practice:
+
+### Rust Practice Questions: Functions, Control Flow & Decision Making
+
+**Part 1: Functions**
+
+1. Write a function `divide(x: f64) -> f64` that returns `100.0 / x`.  
+2. Write a function `double(num: i32) -> i32` that doubles the input.  
+3. Write a function `is_even(num: i32) -> bool` that checks if a number is even.  
+4. Write a function `welcome(name: &str)` that prints `"Welcome, <name>!"`.  
+
+
+
+**Part 2: If/Else**
+
+5. Write a function `check_number(num: i32)` that prints whether the number is positive, negative, or zero.  
+6. Write a function `can_vote(age: i32)` that prints `"Eligible to vote"` if age ≥ 18, otherwise `"Not eligible"`.  
+7. Write a function `check_even_odd(num: i32)` that prints `"Even"` if even, else `"Odd"`.  
+8. Write a function `check_account(balance: i32)` that prints `"Premium"`, `"Standard"`, `"Basic"`, or `"Overdrawn"`.  
+
+
+
+**Part 3: Match**
+
+9. Write a function `print_number(num: i32)` that prints `"One"`, `"Two"`, or `"Other"` using `match`.  
+10. Write a function `describe_grade(grade: char)` that prints messages for `'A'`, `'B'`, `'C'`, `'D'`, and `'F'`.  
+11. Write a function `day_of_week(day: i32)` that returns `"Monday"` to `"Sunday"` or `"Invalid"`.  
+12. Write a function `check_vowel(c: char)` that prints `"Vowel"` or `"Consonant"`.  
+
+
+
+**Part 4: Loops**
+
+13. Write a function `count_to_five()` that uses a `while` loop to print numbers 1–5.  
+14. Write a function `print_evens()` that uses a `for` loop to print even numbers from 0–20.  
+15. Write a function `print_chars(word: &str)` that uses a `for` loop to print each character in a string.  
+16. Write a function `print_squares()` that uses a `for` loop with `0..=5` and prints the square of each number.  
+
+
+
+**Part 5: Result & Error Handling**
+
+17. Write a function `safe_divide(a: f64, b: f64) -> Result<f64, &'static str>` that returns an error if `b == 0`.  
+18. Write a function `test_division()` that calls `safe_divide(10.0, 2.0)` and prints the result using `match`.  
+19. Write a function `to_positive(num: i32) -> Result<i32, &'static str>` that returns an error if `num < 0`.  
+20. Write a function `rounded_divide(a: f64, b: f64) -> Result<f64, &'static str>` that returns division rounded to 2 decimals.  
+  
+
+
+
+
+
+
 
 Remember: You're building the foundation for smart contract development. Every concept we learn applies directly to blockchain applications!
