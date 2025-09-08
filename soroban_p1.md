@@ -23,6 +23,8 @@
 
 ## Part 2: Writing Our First Contract
 
+### Set Up -> https://developers.stellar.org/docs/build/smart-contracts/getting-started/setup
+
 Here’s the code we’ll work with:
 
 ```rust
@@ -164,11 +166,18 @@ fn test() {
 In your terminal, run:
 
 ```bash
-stellar contract build   # Compile the contract
 stellar contract test    # Run the tests
 ```
 
 If successful, you’ll see a passing test message.
+
+### Build the contract
+
+In your terminal, run:
+
+```bash
+stellar contract build
+```
 
 ---
 
